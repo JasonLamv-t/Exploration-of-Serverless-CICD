@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "ali-oss": "^6.15.2"
+  }
+}

@@ -1,0 +1,44 @@
+edition: 1.0.0 #  命令行YAML规范版本，遵循语义化版本（Semantic Versioning）规范
+name: fcDeployApp #  项目名称
+access: "ali-jason" #  秘钥别名
+
+services:
+  fs-node-cicd: #  服务名称
+    component: devsapp/fc # 组件名称
+    props: #  组件的属性值
+      region: cn-shenzhen
+      service:
+        name: fs-node-cicd
+        description: "demo for fc-node-cicd component"
+        internetAccess: true
+        logConfig:
+          enableRequestMetrics: true
+          logstore: function-log
+          project: aliyun-fc-cn-shenzhen-3afc58f2-434c-5239-8c8c-c61ed09edcf6
+      function:
+        name: http-trigger-function
+        description: this is a test for node based front end cicd
+        runtime: nodejs12
+        codeUri: ./
+        # ossBucket:
+        # ossKey:  # conflict with codeUri
+        handler: index.handler
+        memorySize: 128
+        timeout: 180
+      triggers:
+        - name: httpTrigger
+          type: http
+          config:
+            authType: anonymous
+            methods:
+              - GET
+              - POST
+      customDomains:
+        - domainName: auto
+          protocol: HTTP
+          routeConfigs:
+            - path: /*
+              methods:
+                - GET
+                - POST
+# 函数计算FC组件文档参考地址：https://github.com/devsapp/fc
