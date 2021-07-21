@@ -11,10 +11,10 @@ exports.handler = async (req, resp, context) => {
   resp.setHeader('Content-type', 'application/json')
 
   const client = new oss({
-    region: 'oss-cn-shenzhen',
-    accessKeyId: 'LTAI5tP7ouDPgVvA7qBqzuvT',
-    accessKeySecret: '8YSMNgVBD6ZFWcJpnmx9kMfZDT3LMR',
-    bucket: 'serverless-devs-jason'
+    region: 'oss-cn-shenzhen', // 根据实际设置填写
+    accessKeyId: '',
+    accessKeySecret: '',
+    bucket: 'serverless-cicd'
   })
 
   async function get(filename, localpath, cmd) {
@@ -50,8 +50,10 @@ exports.handler = async (req, resp, context) => {
       execSync(gitclone)
       console.log('克隆完成')
     } catch (e) {
+      console.error(e)
       resp.send('git clone fail')
     }
+    // execSync(`cd /tmp/${repository_name} && sh build.sh`)
 
     function getFilesList(dir) {
       let res = []
@@ -69,7 +71,7 @@ exports.handler = async (req, resp, context) => {
     const files = getFilesList(`/tmp/${repository_name}/`)
     Promise.all(files.map(file => {
       return new Promise(async (resolve) => {
-        let res = await client.put(file.filepath.replace('/tmp', ''), file.filepath)
+        let res = await client.put(file.filepath.replace(`/tmp`, ``), file.filepath)
         resolve(`${file.filename} uploading: ${res.res.status == 200}`)
       })
     })).then(r => {
@@ -77,6 +79,6 @@ exports.handler = async (req, resp, context) => {
       resp.send(JSON.stringify({
         ref, ref_type, repository_name, clone_url
       }))
-    }) 
+    })
   })
 }
