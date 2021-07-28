@@ -1,4 +1,4 @@
-# Serverless-devs的快速入门
+# Serverless-Devs的快速入门
 
 ## 前置步骤
 1. 通过yarn全局安装@serveless-devs/s

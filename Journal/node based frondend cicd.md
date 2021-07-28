@@ -29,21 +29,21 @@
 
 ### RAM账号
 
-前往[RAM 访问控制 (aliyun.com)](https://ram.console.aliyun.com/users)创建一个子用户，赋予其对象存储服务权限「AliyunOSSFullAccess」及管理函数计算(FC)服务权限「AliyunFCFullAccess」并创建AccessKey。
+前往[RAM 访问控制](https://ram.console.aliyun.com/users)创建一个子用户，赋予其对象存储服务权限「AliyunOSSFullAccess」及管理函数计算(FC)服务权限「AliyunFCFullAccess」并创建AccessKey。
 
 ![image-20210720133222847](https://tva1.sinaimg.cn/large/008i3skNgy1gsncse20oij30s30823z3.jpg)
 
 ### 对象存储服务(OSS)
 
-前往[OSS管理控制台 (aliyun.com)](https://oss.console.aliyun.com/overview)开通对象存储服务，并创建一个Bucket，Bucket名称为serverless-cicd，存储地域为华南1(深圳)，其他参数为默认值。**您可以选择不同的地域及Bucket名称，但需要对代码进行相应修改**
+前往[OSS管理控制台](https://oss.console.aliyun.com/overview)开通对象存储服务，并创建一个Bucket，Bucket名称为serverless-cicd，存储地域为华南1(深圳)，其他参数为默认值。**您可以选择不同的地域及Bucket名称，但需要对代码进行相应修改**
 
 ### 函数计算服务(FC)
 
-前往[函数计算控制台 (aliyun.com)](https://fc.console.aliyun.com/fc/overview/cn-shenzhen)开通函数计算服务，请注意，函数计算服务分服务地域进行管理，您可能需要切换地域才能查看相应的服务及函数。
+前往[函数计算控制台](https://fc.console.aliyun.com/fc/overview/cn-shenzhen)开通函数计算服务，请注意，函数计算服务分服务地域进行管理，您可能需要切换地域才能查看相应的服务及函数。
 
 ### 日志服务(SLS)
 
-前往[阿里云控制台-日志服务 (aliyun.com)](https://sls.console.aliyun.com/lognext/profile)开通日志服务，并创建一个名为serverless-cicd-log的Project，创建成功后会提示是否创建logStore，我们选择确认。
+前往[日志服务](https://sls.console.aliyun.com/lognext/profile)开通日志服务，并创建一个名为serverless-cicd-log的Project，创建成功后会提示是否创建logStore，我们选择确认。
 
 ![image-20210720135617456](https://tva1.sinaimg.cn/large/008i3skNgy1gsndh8gt29j30ap0bwwev.jpg)
 
@@ -65,7 +65,7 @@ logStore我们填写名称，其他保持默认。
 
 ### 初始化项目
 
-执行`s init`来创建项目，我们选择*Alibaba Cloud Serverless➡️HTTP Function-Node.js 12 Example➡️输入文件夹名称*。
+执行`s init`来创建项目，我们选择*Alibaba Cloud Serverless ➡️ HTTP Function-Node.js 12 Example ➡️ 输入文件夹名称*。
 
 ### 修改s.yaml
 
@@ -231,11 +231,11 @@ exports.handler = async (req, resp, context) => {
 
 ### 配置GitHub
 
-进入GitHub前端仓库➡️Settings➡️Webhooks：
+进入GitHub前端仓库 ➡️ Settings ➡️ Webhooks：
 
 - payload：触发器路径，可复制命令行输出或到控制台查看
 - Content type：application/json
-- events：仅勾选☑️Branch or tag creation
+- events：仅勾选 ☑️ Branch or tag creation
 
 ### 触发测试
 
