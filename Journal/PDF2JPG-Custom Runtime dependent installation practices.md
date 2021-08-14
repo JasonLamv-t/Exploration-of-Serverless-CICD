@@ -8,13 +8,13 @@
 
 如果您的开发环境没有Serverless-Devs，如果您的开发环境具备[npm](https://www.npmjs.com/)，可执行以下命令进行安装：
 
-```shell
+```bash
 npm install  @serverless-devs/s -g
 ```
 
 或者 通过 [yarn](https://yarnpkg.com/) 进行安装
 
-```shell
+```bash
 yarn global add  @serverless-devs/s
 ```
 
