@@ -1,0 +1,33 @@
+{
+  "statefulConfig": {
+    "serviceName": "pdf2jpg",
+    "description": "PDF转JPG工具",
+    "role": "",
+    "logConfig": {
+      "project": "",
+      "logstore": "",
+      "enableRequestMetrics": false,
+      "enableInstanceMetrics": false
+    },
+    "serviceId": "5990bd05-71f4-4852-b069-62396cced01c",
+    "createdTime": "2021-08-03T05:51:23Z",
+    "vpcConfig": {
+      "vpcId": "",
+      "vSwitchIds": [],
+      "securityGroupId": "",
+      "role": ""
+    },
+    "internetAccess": true,
+    "nasConfig": {
+      "userId": -1,
+      "groupId": -1,
+      "mountPoints": []
+    },
+    "vendorConfig": null,
+    "tracingConfig": {
+      "type": null,
+      "params": null
+    },
+    "name": "pdf2jpg"
+  }
+}

@@ -1,0 +1,24 @@
+edition: 1.0.0          #  命令行YAML规范版本，遵循语义化版本（Semantic Versioning）规范
+name: pdf2img       #  项目名称
+access: "{{ access }}"  #  秘钥别名
+
+services:
+  pdf2img: #  服务名称
+    component: fc  # 组件名称
+    props: #  组件的属性值
+      region: cn-shenzhen
+      service:
+        name: pdf2img
+        description: PDF转IMG工具
+      function:
+        name: node-pdf2jpg
+        description: 
+        codeUri: ./
+        handler: index.handler
+        memorySize: 128
+        runtime: nodejs12
+        timeout: 60
+        environmentVariables:
+          GS_LIB: >-
+            .s/root/usr/share/ghostscript/9.26/Resource/Init:.s/root/usr/share/ghostscript/9.26/lib:.s/root/usr/share/ghostscript/9.26/Resource/Font:.s/root/usr/share/ghostscript/fonts:.s/root/var/lib/ghostscript/fonts:.s/root/usr/share/ghostscript/fonts:.s/root/usr/share/fonts
+          MAGICK_CONFIGURE_PATH: /code/.s/root/usr/lib/GraphicsMagick-1.4/config

@@ -1,0 +1,40 @@
+{
+  "statefulConfig": {
+    "functionId": "209f9a18-90de-451a-bbdb-e883051b5e5b",
+    "functionName": "ghostscript",
+    "description": "基于ghostscript实现",
+    "runtime": "nodejs12",
+    "handler": "index.handler",
+    "timeout": 60,
+    "initializer": "",
+    "initializationTimeout": 3,
+    "codeSize": 16149230,
+    "codeChecksum": "14200726139676394865",
+    "memorySize": 128,
+    "environmentVariables": {
+      "GS_LIB": ".s/root/usr/share/ghostscript/9.26/Resource/Init:.s/root/usr/share/ghostscript/9.26/lib:.s/root/usr/share/ghostscript/9.26/Resource/Font:.s/root/usr/share/ghostscript/fonts:.s/root/var/lib/ghostscript/fonts:.s/root/usr/share/ghostscript/fonts:.s/root/usr/share/fonts",
+      "LD_LIBRARY_PATH": "/code/.s/root/usr/local/lib:/code/.s/root/usr/lib:/code/.s/root/usr/lib/x86_64-linux-gnu:/code/.s/root/usr/lib64:/code/.s/root/lib:/code/.s/root/lib/x86_64-linux-gnu:/code/.s/root/python/lib/python2.7/site-packages:/code/.s/root/python/lib/python3.6/site-packages:/code:/code/lib:/usr/local/lib",
+      "MAGICK_CONFIGURE_PATH": "/code/.s/root/usr/lib/GraphicsMagick-1.4/config",
+      "NODE_PATH": "/code/node_modules:/usr/local/lib/node_modules",
+      "PATH": "/code/.s/root/usr/local/bin:/code/.s/root/usr/local/sbin:/code/.s/root/usr/bin:/code/.s/root/usr/sbin:/code/.s/root/sbin:/code/.s/root/bin:/code:/code/node_modules/.bin:/code/.s/python/bin:/code/.s/node_modules/.bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/sbin:/bin",
+      "PYTHONUSERBASE": "/code/.s/python"
+    },
+    "createdTime": "2021-08-03T05:55:52Z",
+    "instanceConcurrency": 1,
+    "customContainerConfig": null,
+    "caPort": null,
+    "instanceType": "e1",
+    "layers": null,
+    "instanceLifecycleConfig": {
+      "preFreeze": {
+        "handler": "",
+        "timeout": 3
+      },
+      "preStop": {
+        "handler": "",
+        "timeout": 3
+      }
+    },
+    "name": "ghostscript"
+  }
+}
