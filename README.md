@@ -4,7 +4,7 @@
 
 归属项目：[Summer-2021 (iscas.ac.cn)](https://summer.iscas.ac.cn/#/org/prodetail/210770460)
 
-导师：[张千风](mailto:qianfeng.zqf@alibaba-inc.com)
+导师：[张千风](https://github.com/git-qfzhang)
 
 项目完成工作：
 
